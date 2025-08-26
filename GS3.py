@@ -105,14 +105,6 @@ class GroundStation:
         print("calculation of tree_id")
         tree_id = self.merkle_forest.get_tree_id_for_drone(ps_id_dr)
         print("treeid -> ", tree_id)
-        # if tree_id is not None:
-        #     affected_drones = self.merkle_forest.get_affected_drones_by_tree(tree_id)
-        #     # Remove the current drone from affected drones
-        #     if ps_id_dr in affected_drones:
-        #         affected_drones.remove(ps_id_dr)
-        #
-        #     # Add affected drones to the update queue
-        #     self.drones_needing_updates.update(affected_drones)
 
         print(f"Drone {ps_id_dr} successfully registered with tree_id {tree_id}, leaf_pos {leaf_pos}")
         return {
@@ -400,3 +392,4 @@ class GroundStationServer:
 if __name__ == "__main__":
     server = GroundStationServer()
     server.start()
+
